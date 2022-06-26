@@ -12,21 +12,10 @@ repositories {
 kotlin {
     wasm32 {
         binaries.executable {
-            entryPoint("Main")
-        }
-    }
-
-    js(IR) {
-        binaries.executable()
-        browser {
-            commonWebpackConfig {
-                cssSupport.enabled = true
-            }
+            entryPoint("main")
         }
     }
     sourceSets {
-        val jsMain by getting
-        val commonMain by getting
         val wasm32Main by getting
     }
 }
