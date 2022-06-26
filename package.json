@@ -1,0 +1,35 @@
+{
+  "name": "web2d",
+  "version": "0.1.0",
+  "description": "A 2d tile based game engine for the web",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReMod-Software/web2d.git"
+  },
+  "author": "Octal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReMod-Software/web2d/issues"
+  },
+  "homepage": "https://github.com/ReMod-Software/web2d#readme",
+  "dependencies": {
+    "assemblyscript": "^0.20.13"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "scripts": {
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "test": "node tests",
+    "start": "npx serve ."
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.20.13"
+  }
+}
